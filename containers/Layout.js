@@ -5,7 +5,7 @@ import Footer from './footer/footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export default class App extends Component {
+export default class Layout extends Component {
     render () {
         return (
           <div>

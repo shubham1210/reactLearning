@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-//import '../../../styles/error-page.scss';
 
 class ErrorComponent extends Component {
     render() {
