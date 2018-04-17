@@ -1,0 +1,5 @@
+// this we have added becuase spaces and adding component in render function was not working.
+
+{
+  "plugins": ["transform-react-jsx"]
+}
