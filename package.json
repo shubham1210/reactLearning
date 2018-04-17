@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/shubham1210/reactLearning#readme",
   "dependencies": {
+    "bootstrap": "^4.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",

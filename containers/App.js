@@ -2,6 +2,8 @@ import React , {Component} from 'react';
 
 import Header from './header/header'
 import Footer from './footer/footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default class App extends Component {
     render () {
