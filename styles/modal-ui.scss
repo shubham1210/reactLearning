@@ -1,0 +1,84 @@
+.modal-body {
+  padding: 10px 15px;
+}
+
+.modal-footer,
+.modal-header {
+  padding: 10px 15px;
+}
+
+.h3Bordered {
+  color: #5c6970;
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.note {
+  margin: 0;
+  font-size: initial;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-family: "FaktConPro-Normal";
+  text-align: left;
+}
+
+.kiInputBox,
+.mcpInputBox {
+  width: 100%;
+  color: #222;
+  border: solid 1px #88b0c0;
+  border-radius: 3px;
+  padding: 2px;
+  font-size: 13px;
+  display: flex;
+}
+
+.inputBox {
+  height: 30px;
+  width: 100%;
+  color: #222;
+  border: solid 1px #88b0c0;
+  border-radius: 3px;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.error-date-field input,
+.error-field,
+.error-field:focus {
+  border: solid 1px red;
+  outline: red;
+}
+
+.error-message {
+  color: red;
+}
+
+.btn-default:focus {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.link-mcp-modal-body,
+.toggle-active-ci-modal-body {
+  position: relative;
+  padding: 15px;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.counter {
+  font-size: 12px;
+  padding: 2px;
+  color: #a9a9a9;
+}
+
+.btn-create-mcp {
+  margin-top: 4px;
+  color: #00558B;
+}
+
+.label-create-mcp {
+  font-family: "FaktConPro-Normal";
+}

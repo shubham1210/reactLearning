@@ -11,8 +11,6 @@ import configureStore from './containers/store/store.js';
 
 const store = configureStore();
 
-console.log(store);
-
 ReactDOM.render((
     <Provider store={store}>
     <BrowserRouter store={store}>

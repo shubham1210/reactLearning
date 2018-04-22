@@ -1,0 +1,175 @@
+/* This CSS file includes all the legends used in the application*/
+.activity-proposed {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #F28933;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.activity-proposed-indicator {
+  border-left: 3px solid #F28933;
+}
+
+.exp-briefing,
+.sr-inquiry,
+.event-icon {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #73791E;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.activity-scheduled {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #73791E;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.activity-scheduled-indicator {
+  border-left: 3px solid #73791E;
+}
+
+.activity-delivered {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #CECECE;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.activity-delivered-indicator {
+  border-left: 3px solid #CECECE;
+}
+
+.btn-activity {
+  border: 1px solid #73791E;
+  border-radius: 4px;
+  color: white;
+  background: #73791E;
+  height: 35px;
+  width: 135px;
+  text-align: center;
+
+  label {
+    line-height: 25px;
+    width: 100% !important;
+  }
+}
+
+.btn-activity-long {
+  width: 175px !important;
+}
+
+.btn-activity-active {
+  border: 1px solid #F28933;
+  border-radius: 4px;
+  color: #F28933;
+  height: 35px;
+  width: 135px;
+  text-align: center;
+
+  label {
+    line-height: 25px;
+    width: 100% !important;
+  }
+}
+
+.btn-activity-disabled {
+  cursor: not-allowed;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: #CECECE;
+  height: 35px;
+  width: 135px;
+  text-align: center;
+
+  label {
+    line-height: 25px;
+    width: 100% !important;
+  }
+}
+
+.btn-activity-disabled label {
+  cursor: not-allowed;
+  width: 110px;
+  margin-top: 5px;
+  height: 30px;
+}
+
+.btn-activity-delivered {
+  border: 1px solid #CECECE;
+  border-radius: 4px;
+  color: white;
+  background: #CECECE;
+  height: 35px;
+  width: 110px;
+  text-align: center;
+}
+
+.btn-activity-delivered-active {
+  border: 1px solid #CECECE;
+  border-radius: 4px;
+  color: #CECECE;
+  height: 35px;
+  width: 110px;
+  text-align: center;
+}
+
+.btn-activity label,
+.btn-activity-active label,
+.btn-activity-delivered label,
+.btn-activity-delivered-active label,
+.btn-activity-scheduled label,
+.btn-activity-scheduled-active label {
+  cursor: pointer;
+  width: 110px;
+  margin-top: 5px;
+  height: 30px;
+}
+
+.btn-activity-delivered:hover,
+.btn-activity:hover {
+  color: #333;
+  background-color: #d4d4d4;
+  border-color: #8c8c8c;
+}
+
+.checkmark-proposal {
+  display: inline-block;
+
+  &:after {
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: 8px;
+    height: 14px;
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid #F28933;
+    border-width: 0 2px 2px 0;
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg);
+  }
+}
+
+.checkmark-scheduled {
+  display: inline-block;
+
+  &:after {
+    /*Add another block-level blank space*/
+    content: '';
+    display: block;
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: 8px;
+    height: 14px;
+    /*Add a white border on the bottom and left, creating that 'L' */
+    border: solid #73791E;
+    border-width: 0 2px 2px 0;
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg);
+  }
+}

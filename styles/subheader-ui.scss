@@ -1,0 +1,67 @@
+.subheaderBox {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 45px;
+  background: white;
+  padding: 15px;
+  box-shadow: 5px 4px 8px -6px #626262;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.accountBlock{
+  padding-right: 50px;
+}
+
+.mailBlock{
+  padding-left: 0px;
+}
+
+.name-job-block,
+.phone-mail-block,
+.leadership-block,
+.date-block{
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+.toggle-block, .date-block{
+  font-size: 16px;
+  padding: 0px;
+  label{
+    margin-bottom: 0px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    [class^="icon-"], [class*=" icon-"]{
+      font-size: 18px;
+    }
+  }
+}
+
+.name-job-block,
+.leadership-block,
+.phone-mail-block > strong {
+  font-size: 16px;
+}
+
+.delegateBlock{
+  font-size: 16px;
+}
+
+.account-nm {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.job {
+  font-size: 12px;
+}
+
+.email {
+  font-size: 12px;
+  color: blue;
+}
