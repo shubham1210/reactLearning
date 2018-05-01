@@ -2,8 +2,9 @@ import {createStore,compose,applyMiddleware,combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import headerReducer from '../header/reducer.js';
+import bodyReducer from '../body/reducer.js';
 
-const rootReducer = combineReducers({headerReducer});
+const rootReducer = combineReducers({headerReducer,bodyReducer});
 
 export default function configureStore() {
     console.log('= Initializing redux store for ' + process.env.NODE_ENV + ' environment... =');
