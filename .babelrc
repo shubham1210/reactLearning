@@ -1,5 +1,5 @@
 // this we have added becuase spaces and adding component in render function was not working.
 
 {
-  "plugins": ["transform-react-jsx"]
+  "plugins": ["transform-react-jsx","transform-object-rest-spread"]
 }

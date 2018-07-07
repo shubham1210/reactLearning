@@ -4,11 +4,23 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as api from '../shared/api'
 import { setRulesList } from './action';
-import { Button,ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
+import Switch from 'material-ui/Switch';
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
 
 
 class Body extends Component {
 
+    constructor(props, context) {
+        super(props, context);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            "selection": {
+            }
+
+        }
+
+    }
     componentDidMount() {
         api.getRules().then((rules) => {
             if (rules != null) {
@@ -17,44 +29,38 @@ class Body extends Component {
         });
     }
 
-    render() {
+    handleChange(event,name) {
+        const stateNewCopy ={...this.state}
+        if(this.state.selection[name] == 0 || this.state.selection[name] == 1)
+            stateNewCopy.selection[name] = !this.state.selection[name]
+        else
+            stateNewCopy.selection[name] = true
+        this.setState({stateNewCopy});
+    }
 
-        const rule = this.props.rules.map(function (indexValue, i) {
+
+
+    render() {
+        const stateSelection = this.state.selection
+        const ruleData = this.props.rules
+        const rule = ruleData.map( (indexValue, i)=> {
             return (<tr key={i}>
                 <th scope="row">{i + 1}</th>
                 <td>{indexValue.title}</td>
                 <td>{indexValue.releaseYear}</td>
                 <td>Yes</td>
-                <td></td>
+                <td>
+                    <Switch
+                        checked={stateSelection[i]}
+                        onChange={e => this.handleChange(event ,i)}
+                    />
+                </td>
             </tr>)
         });
-        console.log(rule);
 
         return (
 
             <div>
-                <ButtonToolbar>
-                    {/* Standard button */}
-                    <Button>Default</Button>
-
-                    {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
-                    <Button bsStyle="primary">Primary</Button>
-
-                    {/* Indicates a successful or positive action */}
-                    <Button bsStyle="success">Success</Button>
-
-                    {/* Contextual button for informational alert messages */}
-                    <Button bsStyle="info">Info</Button>
-
-                    {/* Indicates caution should be taken with this action */}
-                    <Button bsStyle="warning">Warning</Button>
-
-                    {/* Indicates a dangerous or potentially negative action */}
-                    <Button bsStyle="danger">Danger</Button>
-
-                    {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
-                    <Button bsStyle="link">Link</Button>
-                </ButtonToolbar>;
                 <table className="table">
                     <thead>
                         <tr>
