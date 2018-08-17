@@ -3,15 +3,32 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setUserDetails } from './action';
+import * as api from '../shared/api'
+
+
 
 class Header extends Component {
 
-    componentDidMount() {
-        this.props.setHeaderDetails('Nikhil sharma');
+    
+    constructor(props, context) {
+        super(props, context);
     }
 
+    componentDidMount() {
+        api.getLoggedUser().then((user) => {
+            if (user != null) {
+                this.props.setHeaderDetails(user.usrFirstNm +' '+user.usrLstNm);
+            }
+        });
+
+    }
+
+   
+
     render() {
+
         return (
+<div>
             <nav className="navbar navbar-default navbar-static-top">
                 <div className="container-fluid">
                     <div className="row container-fluid">
@@ -24,7 +41,9 @@ class Header extends Component {
                         </div>
                     </div>
                 </div>
-            </nav>);
+            </nav>
+            </div>
+        );
     }
 }
 

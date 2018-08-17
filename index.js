@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import Layout from './containers/Layout';
 import ErrorComponent from './containers/sorryPages/404_page';
 import configureStore from './containers/store/store.js';
-
+import Chart from './containers/charts/chart';
 
 const store = configureStore();
 
@@ -16,7 +16,7 @@ ReactDOM.render((
     <BrowserRouter store={store}>
         <Switch>
             <Route path='/entry/' component={ Layout } />
-            <Route path='/entry/:id' component={ Layout } />
+            <Route path='/chart/' component={ Chart } />
             <Route path='/error/' component={ ErrorComponent } />
         </Switch>
     </BrowserRouter>
