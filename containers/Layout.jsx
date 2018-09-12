@@ -1,8 +1,7 @@
 import React , {Component} from 'react';
-
-import Header from './header/header'
-import Footer from './footer/footer'
-import Body from './Body/body'
+import Header from './header/header.jsx';
+import Footer from './footer/footer.jsx';
+import Body from './body/body.jsx';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/styles.scss';

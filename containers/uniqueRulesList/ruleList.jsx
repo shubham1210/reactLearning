@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as api from '../shared/api'
-import { setRulesList } from './action';
+import * as api from '../shared/api.jsx'
+import { setRulesList } from './action.jsx';
 import Switch from 'material-ui/Switch';
 import ReactLoading from 'react-loading';
 
@@ -124,7 +124,7 @@ class RuleList extends Component {
 
 
 function mapStateToProps(ComponentState) {
-    return { rules: ComponentState.bodyReducer.rules };
+    return { rules: ComponentState.ruleListReducer.rules };
 }
 
 function mapDispatchToProps(dispatch) {

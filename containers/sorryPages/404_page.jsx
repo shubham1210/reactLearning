@@ -1,10 +1,9 @@
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ErrorComponent extends Component {
     render() {
         return (
-
             <div className="container">
                 <div className="row">
                     <div className="span12">
@@ -16,9 +15,8 @@ class ErrorComponent extends Component {
                             <a href="/entry" className="btn btn-large btn-info"><i className="icon-home icon-white"></i> Take Me Home</a>
                         </div>
                         <br />
-
+                    </div>
                 </div>
-            </div>
             </div>
 
         );

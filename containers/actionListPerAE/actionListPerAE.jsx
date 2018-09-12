@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as api from '../shared/api'
-import { setActionPerAE } from './action';
+import * as api from '../shared/api.jsx'
 import ReactLoading from 'react-loading';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
-import CloseIcon from '@material-ui/icons/close';
+import {Close} from '@material-ui/icons';
 import Modal from 'react-modal';
 import Button from '@material-ui/core/Button';
 
@@ -21,7 +17,8 @@ class ActionListperAE extends Component {
                 "viewAeActionDialog": false,
                 "modalAeName": props.modalAeName,
                 "modalAeNum": props.modalAeNum,
-                "updateOperation":false
+                "updateOperation":false,
+                "aePerActionList":[]
         }
         this.openAeActionViewDialog = this.openAeActionViewDialog.bind(this);
         this.markActioncomplete = this.markActioncomplete.bind(this);
@@ -66,7 +63,7 @@ class ActionListperAE extends Component {
           this.setState({"fetchOperation":true})
           api.getRuleByAE(nextProps.modalAeNum).then((actionByAE) => {
             if (actionByAE != null) {
-                this.props.setActionPerAE(actionByAE);
+                this.setState({"aePerActionList":actionByAE})
                 this.setState({"fetchOperation":false})
             }
         });
@@ -74,7 +71,7 @@ class ActionListperAE extends Component {
       }
 
       render() {
-        const aePerActionList = this.props.aePerActionList
+        const aePerActionList = this.state.aePerActionList
         const columns = [ {
           Header: props => <span style={styles.header_font}>ACTION</span>,
           accessor: 'ACTION_DETAILS',
@@ -104,7 +101,7 @@ class ActionListperAE extends Component {
            onRequestClose={this.closeAeActionViewDialog}
            className="editModal"
            overlayClassName="editModalOverlay"> 
-              <span style={styles.editDialogTitle}>Action of AE -{this.props.modalAeName} <span></span><CloseIcon style={styles.closeIcon} onClick={this.props.close} /></span> 
+              <span style={styles.editDialogTitle}>Action of AE -{this.props.modalAeName} <span></span><Close style={styles.closeIcon} onClick={this.props.close} /></span> 
               <hr style={styles.hrDialog} />           
               <div  style={this.state.fetchOperation ? styles.showDivLoader : styles.hideDiv}>
             <ReactLoading type="spokes" color="#0277bd" />
@@ -127,22 +124,7 @@ class ActionListperAE extends Component {
         } 
 
     }        
-function mapStateToProps(ComponentState) {
-    return { aePerActionList: ComponentState.actionPerAeListReducer.aePerActionList };
-}
 
-function mapDispatchToProps(dispatch) {
-
-    return bindActionCreators({
-        setActionPerAE: setActionPerAE
-    }, dispatch);
-}
-
-
-// prop validations
-ActionListperAE.propTypes = {
-    setActionPerAE: PropTypes.func.isRequired
-};
 
 const styles = {
     editDialogButtonDiv:{
@@ -184,4 +166,4 @@ const styles = {
       },
     }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActionListperAE);
+export default ActionListperAE;

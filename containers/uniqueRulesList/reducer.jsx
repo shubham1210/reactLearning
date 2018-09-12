@@ -1,4 +1,4 @@
-export default function bodyReducer(state = { rules: [] }, action) {
+export default function ruleListReducer(state = { rules: [] }, action) {
     switch (action.type) {
         case 'RULE_LIST':
             {

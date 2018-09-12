@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as api from '../shared/api'
-import { setAEList } from './action';
+import * as api from '../shared/api.jsx'
+import { setAEList } from './action.jsx';
 import ReactLoading from 'react-loading';
 import ReactTable from "react-table";
 import 'react-table/react-table.css'
-import ActionListperAE from '../actionListPerAE/actionListPerAE';
+import ActionListperAE from '../actionListPerAE/actionListPerAE.jsx'
 
 class RecoAction extends Component {
 

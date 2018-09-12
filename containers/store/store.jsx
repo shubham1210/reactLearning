@@ -1,12 +1,10 @@
 import {createStore,compose,applyMiddleware,combineReducers} from 'redux';
 import {createLogger} from 'redux-logger';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
-import headerReducer from '../header/reducer.js';
-import bodyReducer from '../body/reducer.js';
-import recoActionReducer from '../recoAction/reducer.js';
-import actionPerAeListReducer from '../actionListPerAE/reducer.js';
-import onOffReducer from '../onOffAction/reducer.js';
-const rootReducer = combineReducers({headerReducer,bodyReducer,recoActionReducer,actionPerAeListReducer,onOffReducer});
+import headerReducer from '../header/reducer.jsx';
+import recoActionReducer from '../aeDetails/reducer.jsx';
+import ruleListReducer from '../uniqueRulesList/reducer.jsx';
+const rootReducer = combineReducers({headerReducer,recoActionReducer,ruleListReducer});
 
 export default function configureStore() {
     console.log('= Initializing redux store for ' + process.env.NODE_ENV + ' environment... =');
